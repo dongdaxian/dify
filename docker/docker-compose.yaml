@@ -224,7 +224,6 @@ services:
     networks:
       - ssrf_proxy_network
       - default
-    pull_policy: always
 
   # worker service
   # The Celery worker for processing the queue.
@@ -245,7 +244,6 @@ services:
     networks:
       - ssrf_proxy_network
       - default
-    pull_policy: always
 
   # Frontend web application.
   web:
@@ -257,7 +255,6 @@ services:
       SENTRY_DSN: ${WEB_SENTRY_DSN:-}
       NEXT_TELEMETRY_DISABLED: ${NEXT_TELEMETRY_DISABLED:-0}
       TEXT_GENERATION_TIMEOUT_MS: ${TEXT_GENERATION_TIMEOUT_MS:-60000}
-    pull_policy: always
 
   # The postgres database.
   db:
